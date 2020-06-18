@@ -11,10 +11,12 @@ pool:
 
 variables:
   solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: '$(test)'
+  buildPlatform: '$(test)'
+  buildConfiguration: 'Release'
 
 steps:
+- bash: echo $(buildPlatform)
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
